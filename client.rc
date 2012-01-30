@@ -1,0 +1,41 @@
+#include <windows.h>
+#include "resource.h"
+
+#ifdef _WIN32
+LANGUAGE 0x21, 0x1
+#pragma code_page(1252)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_MAIN DIALOG DISCARDABLE  0, 0, 412, 198
+STYLE DS_FIXEDSYS | WS_MINIMIZEBOX | WS_MAXIMIZEBOX | WS_POPUP | WS_CAPTION | 
+    WS_SYSMENU | WS_THICKFRAME
+CAPTION "LiteFTP Client"
+FONT 8, "Tahoma"
+BEGIN
+    EDITTEXT        IDC_EDIT,0,14,411,12,ES_AUTOHSCROLL
+    PUSHBUTTON      "&Write",IDC_WRITE,0,0,42,14
+    PUSHBUTTON      "&Execute",IDC_EXECUTE,42,0,42,14
+    PUSHBUTTON      "&Connect",IDC_CONNECT,84,0,42,14
+    PUSHBUTTON      "&Refresh",IDC_REFRESH,126,0,42,14
+    CONTROL         "Progress",IDC_PROGRESS,"msctls_progress32",PBS_SMOOTH | 
+                    WS_BORDER,294,0,117,14
+    CONTROL         "Slider1",IDC_TIMER,"msctls_trackbar32",TBS_BOTH | 
+                    TBS_NOTICKS | WS_TABSTOP,208,0,82,15
+    CONTROL         "JPEG",IDC_JPEG,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,
+                    172,3,32,10
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+0                       ICON    DISCARDABLE     "client.ico"
